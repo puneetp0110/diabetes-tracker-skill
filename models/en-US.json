@@ -1,0 +1,642 @@
+{
+    "interactionModel": {
+        "languageModel": {
+            "invocationName": "diabetes tracker",
+            "intents": [
+                {
+                    "name": "AMAZON.CancelIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.HelpIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.StopIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.NavigateHomeIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AddExercise",
+                    "slots": [
+                        {
+                            "name": "ExerciseType",
+                            "type": "AMAZON.SearchQuery",
+                            "samples": [
+                                "{ExerciseType}",
+                                "I played {ExerciseType}"
+                            ]
+                        },
+                        {
+                            "name": "Intensity",
+                            "type": "Intensity",
+                            "samples": [
+                                "{Intensity}"
+                            ]
+                        },
+                        {
+                            "name": "BloodSugar",
+                            "type": "AMAZON.NUMBER",
+                            "samples": [
+                                "My blood sugar is {BloodSugar}",
+                                "{BloodSugar}"
+                            ]
+                        }
+                    ],
+                    "samples": [
+                        "workout",
+                        "i did {ExerciseType}",
+                        "i did exercise",
+                        "I did workout",
+                        "I went to gym",
+                        "track workout ",
+                        "track my {ExerciseType}",
+                        "log my workout",
+                        "My workout for the day {ExerciseType}",
+                        "can you add my workout i did {ExerciseType}",
+                        "I just had an {Intensity} workout",
+                        "I just went to the gym and {ExerciseType}",
+                        "add workout",
+                        "log {ExerciseType}"
+                    ]
+                },
+                {
+                    "name": "AddMeal",
+                    "slots": [
+                        {
+                            "name": "Description",
+                            "type": "AMAZON.Food",
+                            "samples": [
+                                "{Description}",
+                                "I ate {Description}",
+                                "I had {Description}"
+                            ]
+                        },
+                        {
+                            "name": "Meal",
+                            "type": "MealType",
+                            "samples": [
+                                "It was {Meal}",
+                                "{Meal}"
+                            ]
+                        },
+                        {
+                            "name": "BloodSugar",
+                            "type": "AMAZON.NUMBER",
+                            "samples": [
+                                "{BloodSugar}",
+                                "it was {BloodSugar}"
+                            ]
+                        }
+                    ],
+                    "samples": [
+                        "my blood sugar is {BloodSugar} after eating {Description}",
+                        "add {Description} for {Meal}",
+                        "my blood sugar level for my {Meal} was {BloodSugar}",
+                        "I had {Description}",
+                        "my {Meal} was {Description}",
+                        "I just had {Meal}",
+                        "add meal",
+                        "food",
+                        "log food",
+                        "I ate {Description}",
+                        "I just ate {Description} my blood sugar is  {BloodSugar}",
+                        "add food",
+                        "add {Meal}"
+                    ]
+                },
+                {
+                    "name": "AddBloodSugar",
+                    "slots": [
+                        {
+                            "name": "BloodSugar",
+                            "type": "AMAZON.NUMBER",
+                            "samples": [
+                                "My blood sugar was {BloodSugar}",
+                                "It was {BloodSugar}",
+                                "{BloodSugar}"
+                            ]
+                        }
+                    ],
+                    "samples": [
+                        "blood sugar",
+                        "log my blood sugar as {BloodSugar}",
+                        "log my blood sugar",
+                        "add my blood sugar",
+                        "log blood sugar",
+                        "My blood sugar is {BloodSugar}"
+                    ]
+                },
+                {
+                    "name": "GetPreviousData",
+                    "slots": [
+                        {
+                            "name": "searchPhrase",
+                            "type": "AMAZON.SearchQuery",
+                            "samples": [
+                                "How {searchPhrase}",
+                                "What {searchPhrase}"
+                            ]
+                        }
+                    ],
+                    "samples": [
+                        "How {searchPhrase}",
+                        "What {searchPhrase}"
+                    ]
+                },
+                {
+                    "name": "AMAZON.FallbackIntent",
+                    "samples": []
+                }
+            ],
+            "types": [
+                {
+                    "name": "ActivityName",
+                    "values": [
+                        {
+                            "name": {
+                                "value": "Sugar"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Meal"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Excercise"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "MealType",
+                    "values": [
+                        {
+                            "name": {
+                                "value": "brunch"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Snack"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Breakfast"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Lunch",
+                                "synonyms": [
+                                    "lunches"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Dinner",
+                                "synonyms": [
+                                    "christmas dinner",
+                                    "supper",
+                                    "dinners"
+                                ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "Workout",
+                    "values": [
+                        {
+                            "name": {
+                                "value": "cycling",
+                                "synonyms": [
+                                    "bike",
+                                    "bike riding"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "jog",
+                                "synonyms": [
+                                    "jogging"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "running"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "pilates"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "gym"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "cardio"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "aerobic exercise"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "aerobics"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "strength training"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "weight training"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "weights"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "weight lifting "
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "forward lunges"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "lunges"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "squat jumps"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "cobra"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "side plank"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "front plank"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "crunches"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "yoga"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "bent knee push-up"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "contralateral limb raises"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "push-up"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "supermans"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "bootcamp"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "Intensity",
+                    "values": [
+                        {
+                            "name": {
+                                "value": "Light"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Intermediate"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Intense"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        "dialog": {
+            "intents": [
+                {
+                    "name": "AddExercise",
+                    "delegationStrategy": "SKILL_RESPONSE",
+                    "confirmationRequired": false,
+                    "prompts": {},
+                    "slots": [
+                        {
+                            "name": "ExerciseType",
+                            "type": "AMAZON.SearchQuery",
+                            "confirmationRequired": true,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "confirmation": "Confirm.Slot.1374506329049.373250615393",
+                                "elicitation": "Elicit.Slot.293066008713.1423812049099"
+                            }
+                        },
+                        {
+                            "name": "Intensity",
+                            "type": "Intensity",
+                            "confirmationRequired": false,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "elicitation": "Elicit.Slot.1059935200191.1144570288361"
+                            }
+                        },
+                        {
+                            "name": "BloodSugar",
+                            "type": "AMAZON.NUMBER",
+                            "confirmationRequired": false,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "elicitation": "Elicit.Slot.78757209529.1112209021216"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "AddMeal",
+                    "delegationStrategy": "SKILL_RESPONSE",
+                    "confirmationRequired": false,
+                    "prompts": {},
+                    "slots": [
+                        {
+                            "name": "Description",
+                            "type": "AMAZON.Food",
+                            "confirmationRequired": false,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "elicitation": "Elicit.Slot.1504984529125.927712517456"
+                            }
+                        },
+                        {
+                            "name": "Meal",
+                            "type": "MealType",
+                            "confirmationRequired": false,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "elicitation": "Elicit.Slot.1504984529125.800916449337"
+                            }
+                        },
+                        {
+                            "name": "BloodSugar",
+                            "type": "AMAZON.NUMBER",
+                            "confirmationRequired": false,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "elicitation": "Elicit.Slot.1504984529125.500778158164"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "AddBloodSugar",
+                    "delegationStrategy": "SKILL_RESPONSE",
+                    "confirmationRequired": false,
+                    "prompts": {},
+                    "slots": [
+                        {
+                            "name": "BloodSugar",
+                            "type": "AMAZON.NUMBER",
+                            "confirmationRequired": false,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "elicitation": "Elicit.Slot.68406281593.1287563411808"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "GetPreviousData",
+                    "delegationStrategy": "SKILL_RESPONSE",
+                    "confirmationRequired": false,
+                    "prompts": {},
+                    "slots": [
+                        {
+                            "name": "searchPhrase",
+                            "type": "AMAZON.SearchQuery",
+                            "confirmationRequired": false,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "elicitation": "Elicit.Slot.645677358066.1212058252559"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "delegationStrategy": "SKILL_RESPONSE"
+        },
+        "prompts": [
+            {
+                "id": "Elicit.Slot.Change.Name",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "What is your name?"
+                    },
+                    {
+                        "type": "PlainText",
+                        "value": "What's your name?"
+                    },
+                    {
+                        "type": "PlainText",
+                        "value": "And your name?"
+                    }
+                ]
+            },
+            {
+                "id": "Confirm.Intent.1244530681281",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Please tell me the activity."
+                    },
+                    {
+                        "type": "PlainText",
+                        "value": "What is the name of the activity?"
+                    }
+                ]
+            },
+            {
+                "id": "Elicit.Slot.1187144227890.557804147127",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "What is the name of the activity?"
+                    }
+                ]
+            },
+            {
+                "id": "Confirm.Intent.411249916978",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Ok I logged your {ExerciseType}"
+                    }
+                ]
+            },
+            {
+                "id": "Elicit.Slot.1504984529125.927712517456",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "What was your meal?"
+                    }
+                ]
+            },
+            {
+                "id": "Elicit.Slot.1504984529125.500778158164",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "What is your blood sugar level, if there is none just say zero."
+                    }
+                ]
+            },
+            {
+                "id": "Elicit.Slot.1504984529125.800916449337",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Is this breakfast, lunch or dinner?"
+                    }
+                ]
+            },
+            {
+                "id": "Confirm.Slot.1005590722269.130370250675",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Ok I logged your {Meal}"
+                    }
+                ]
+            },
+            {
+                "id": "Confirm.Slot.601303964777.1082058145732",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "I logged {Meal} as {Description} and Blood sugar is {BloodSugar}"
+                    }
+                ]
+            },
+            {
+                "id": "Elicit.Slot.293066008713.1423812049099",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "What workout would you like to log?"
+                    }
+                ]
+            },
+            {
+                "id": "Elicit.Slot.68406281593.1287563411808",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "What was your blood sugar?"
+                    }
+                ]
+            },
+            {
+                "id": "Confirm.Intent.68406281593",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Ok I logged your blood sugar as {BloodSugar}"
+                    }
+                ]
+            },
+            {
+                "id": "Elicit.Slot.78757209529.1112209021216",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "What is your blood sugar level, if there is none just say zero."
+                    }
+                ]
+            },
+            {
+                "id": "Elicit.Slot.1059935200191.1144570288361",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Was this an intense, intermediate or light workout?"
+                    }
+                ]
+            },
+            {
+                "id": "Elicit.Slot.645677358066.1212058252559",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "What should i search for you?"
+                    }
+                ]
+            },
+            {
+                "id": "Confirm.Slot.1374506329049.373250615393",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "your workout was {ExerciseType} is this correct?"
+                    }
+                ]
+            }
+        ]
+    }
+}

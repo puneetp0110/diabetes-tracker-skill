@@ -1,0 +1,33 @@
+{
+  "deploy_settings": {
+    "default": {
+      "skill_id": "amzn1.ask.skill.83f33dc7-f1eb-4512-931f-2f021c51d192",
+      "was_cloned": false,
+      "merge": {},
+      "resources": {
+        "manifest": {
+          "eTag": "9e78fc928469ba1958eb2f2b71e1d19e"
+        },
+        "interactionModel": {
+          "en-US": {
+            "eTag": "1b90db22ae5ea385d33a187175b8e2dc"
+          }
+        },
+        "lambda": [
+          {
+            "alexaUsage": [
+              "custom/default"
+            ],
+            "arn": "arn:aws:lambda:us-east-1:926840541182:function:ask-custom-diabetes-activity-tracker-default",
+            "awsRegion": "us-east-1",
+            "codeUri": "lambda/custom",
+            "functionName": "ask-custom-diabetes-activity-tracker-default",
+            "handler": "index.handler",
+            "revisionId": "f04ec68d-9f83-41d5-ad62-ae188748f9e5",
+            "runtime": "nodejs8.10"
+          }
+        ]
+      }
+    }
+  }
+}

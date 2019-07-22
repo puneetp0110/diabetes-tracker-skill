@@ -1,0 +1,1 @@
+lambda-local -l index.js -h handler -e ~/Desktop/diabetes-tracker-v2/diabetes-activity-tracker/models/en-US.json
